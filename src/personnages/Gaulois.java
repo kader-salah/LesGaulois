@@ -31,9 +31,6 @@ public class Gaulois {
 		return "Gaulois [nom=" + nom + ", force=" + force + "]";
 	}
 	
-	public static void main(String[] args) {
-		//TODO créer un main permettant de tester la classe Gaulois
-	}
 	
 	
 }
