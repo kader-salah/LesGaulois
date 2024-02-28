@@ -1,14 +1,9 @@
 package personnages;
 
 public class Romain {
-	
+
 	private String nom;
 	private int force;
-
-	public Romain(String nom, int force) {
-		this.nom = nom;
-		this.force = force;
-	}
 
 	public String getNom() {
 		return nom;
@@ -18,7 +13,7 @@ public class Romain {
 		System.out.println(prendreParole() + "« " + texte + "»");
 	}
 
-	private String prendreParole() {
+	public String prendreParole() {
 		return "Le romain " + nom + " : ";
 	}
 
@@ -29,5 +24,18 @@ public class Romain {
 		} else {
 			parler("J'abandonne...");
 		}
+	}
+
+	public Romain(String nom, int force) {
+		this.nom = nom;
+		this.force = force;
+	}
+
+	public static void main(String[] args) {
+
+		Romain dz = new Romain("DZ", 4);
+		dz.prendreParole();
+		dz.parler("Je suis le plus fort romain ici ");
+		dz.recevoirCoup(5);
 	}
 }
