@@ -18,7 +18,11 @@ public class Romain {
 	}
 
 	public void recevoirCoup(int forceCoup) {
+		assert force > 0 : "la force d’un Romain est toujours positive";
+		int forceInitial = force;
 		force -= forceCoup;
+		assert force < forceInitial : "la force doit etre diminué après recevoir un coup.";
+		
 		if (force > 0) {
 			parler("Aïe");
 		} else {
@@ -31,11 +35,17 @@ public class Romain {
 		this.force = force;
 	}
 
+	private void assertForce() {
+		assert force > 0 : "la force d’un Romain est toujours positive" ;
+	}
+	
 	public static void main(String[] args) {
-
-		Romain dz = new Romain("DZ", 4);
-		dz.prendreParole();
-		dz.parler("Je suis le plus fort romain ici ");
-		dz.recevoirCoup(5);
+		
+		
+		Romain minus = new Romain("Minus", 6);
+		minus.assertForce();
+		minus.prendreParole();
+		minus.parler("Je suis le plus fort romain ici ");
+		minus.recevoirCoup(5);
 	}
 }
